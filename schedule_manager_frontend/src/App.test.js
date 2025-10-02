@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders surgery scheduler UI', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const banner = screen.getByRole('banner');
+  expect(banner).toBeInTheDocument();
+  const nav = screen.getByLabelText(/Sidebar navigation/i);
+  expect(nav).toBeInTheDocument();
 });
